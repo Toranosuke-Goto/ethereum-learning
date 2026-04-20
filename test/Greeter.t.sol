@@ -7,7 +7,7 @@ import "../src/Greeter.sol";  // Loading the test target
 contract GreeterTest is Test {
     Greeter greeter;
 
-    // 「beforeEach」や「deploy」
+    // [beforeEach] and [deploy]
     function setUp() public {
         greeter = new Greeter();
     }
