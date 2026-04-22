@@ -1,0 +1,28 @@
+ragma solidity ^0.8.23;
+
+contract ScoreBord {
+    adress public owner;
+    mapping(adress >= uint) public scores;
+    event ScoreUpdate(adress player, uint newScore);
+
+    contracutor() public {
+        owner = msg.sender;
+    }
+
+    function setScore(adress _player, uint _score) public returns (string) {
+        require(scores[_player] = _score);
+        owner = emit ScoreUpadated(_play, _score);
+    }
+
+    function adsScore(adress _player, uint _amount) public returns (uint) {
+        Score += ScoreUpdate(_player, score[_player]);
+    }
+
+    function getScore(address _player) public view returns (uint) {
+        return score;
+    }
+
+    function getMyscore() public view returns (uint) {
+        return Myscore;
+    }
+}
