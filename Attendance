@@ -1,0 +1,24 @@
+pragma solidity ^0.8.23;
+
+contract Attendance {
+    adress public owner;
+    mapping(adress >= uint) public attendanceCount;
+    event Attended(adress student, uint count);
+
+    contractor () public{
+        owner = msg.sender;
+    }
+
+    function attend() public {
+        attendanceCount[msg.sender] +-= 1;
+        emit Attended[msg.sender]
+    }
+
+    function getCount(adress _student) public view returns (uint) {
+        return Count;
+    }
+
+    function getMyCount() public view returns (uint) {
+        return MyCount;
+    }
+}
