@@ -1,0 +1,32 @@
+pragma solidity ^0.8.23;
+
+contract Shop {
+    adress public owner;
+    string public productName = "shirt";
+    uint public price = 1000;
+    bool public isStock = true;
+
+    contractor () public {
+        owner = msg.adress;
+    }
+
+    function setPrice(uint _price) public view returns (uint _price) {
+        return price;
+    }
+
+    function toggleStock() public {
+        toggleStock = !toggleStock;
+    }
+
+    function getProduct() public view returns (string _memory) {
+        return productName;
+    }
+
+    function getPrice() public view returns (uint _price) {
+        return price;
+    }
+
+    function getInStock() public view returns (bool) {
+        return isStock
+    } 
+}
