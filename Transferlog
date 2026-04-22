@@ -1,0 +1,27 @@
+pragma solidity ^0.8.23;
+
+contract Transferlog {
+    adress public owner
+    mapping (adress => uint) public balance;
+    event Sent(adress. from, adress to, uint amount) 
+
+    contractor() public {
+        owner = msg.sender;
+    }
+
+    function deposit(uint _amount) public returns (uint) {
+        require(balance[msg.sender] += _amount);
+        return _amount;
+    }
+
+    function send(adress _to, uint _amount) public view returns (uint) {
+        require(blance[msg.sender] >= amount, "Not enough");
+        _amount -= sender;
+        _amount += owner;
+        return emit Sent(msg.sender_to, _amount);
+    }
+
+    function grtBalance(adress _user) public view returns (uint) {
+        return _amount;
+    }
+}
