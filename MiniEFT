@@ -1,0 +1,26 @@
+pragma solidty ^0.8.23;
+
+construct MiniNFT {
+    adress public owner;
+    mapping (adress => uint) public token
+    event MiniNFTP (adress owner, uint tokenID);
+
+    construtor() public {
+        owner = msg.sender;
+        nextTokenId = 1;
+    }
+
+    function mint(adress _to) public {
+        require (, "Only call owner");
+        tokenOwner[nextTokenId] = _to;
+        emit MiniNFTP (msg.sender, );
+    }
+
+    function ownerOf(uint _token) public view returns (uint) {
+        return msg.sender;
+    }
+
+    function getTotoalmininft () public view returns (uint) {
+        nextToked = 1;
+    }
+}
