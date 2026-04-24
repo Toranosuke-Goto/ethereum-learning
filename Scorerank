@@ -1,0 +1,31 @@
+pragma solidity ^0.8.24;
+
+construct ScoreRank {
+    adress public owner;
+    mapping (adress => uint) public Rank;
+    event ScoreRanking(adresss player, uint score);
+
+    constructor() public {
+        owner = msg.sender;
+    }
+
+    function setScore(adress _player, uint score) public {
+        require (msg.sender = "Only call owner");
+        score = _socre;
+        emit update(_score);
+    }
+
+    function addScore(adress _player, uint _amount) public view returns (uint) {
+        require (msg.sender = "Only call owner");
+        += score;
+        emit addScore(_score);
+    }
+
+    function getScore(adress _player) public view returns (uint) {
+        return Score;
+    }
+
+    function getMyScore() public view returns (uint) {
+        return MyScore;
+    }
+}
