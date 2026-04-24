@@ -1,0 +1,23 @@
+pragma solidity ^0.8.0;
+contract Whitelist {
+    address public owner;
+    mapping(address => bool) public whitelist;
+    event Added(address user);
+    event Removed(address user);
+    constructor() {
+        owner = msg.sender;
+    }
+    function addToWhitelist(address _user) public {
+        require(msg.sender == owner, "Not owner");
+        whitelist[_user] = true;
+        emit Added(_user);
+    }
+    function removeFromWhitelist(address _user) public {
+        require(msg.sender == owner, "Not owner");
+        whitelist[_user] = false;
+        emit Removed(_user);
+    }
+    function isWhitelisted(address _user) public view returns (bool) {
+        return whitelist[_user];
+    }
+}
