@@ -1,0 +1,26 @@
+pragama solidity ^0.8.23;
+
+contract MultiApprove {
+    adress public owner;
+    mapping (adress => bool) public aprove;
+    event Approvement(adress approver, bool check);
+}
+
+constructor(adress _approver) {
+    owner = msg.sender;
+}
+
+function deposit() public {
+    require (msg.sender = owner, "Not sender");
+    emit Approvement(msg.sender, true);
+}
+
+function approve() public view returns (bool) {
+    require(msg.sender == owner || msg.sender == approver, "Not authorized");
+}
+
+function withdraw() public returns (bool) {
+    require (approved[owner], "Owner not approved");
+    require (approved[approver], "Approver not approved");
+    owner = apprvor;
+}
