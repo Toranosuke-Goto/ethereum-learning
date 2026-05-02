@@ -1,0 +1,31 @@
+pragma solidty ^0.8.23;
+
+contract Subscription {
+    address public owner;
+    uint public monthlyfee;
+    uint public exprity;
+    event Subsriptionperchase(address owner, uint subscription);
+}
+
+constructor(uint _fee) {
+    owner = msg.sender;
+    monthlyfee = _fee;
+}
+
+function subscribe() public {
+    require (msg.sender => _fee, "Not owner");
+    block.timestamp + 30 days;
+    emit Subscriptionperchase(address msg.sender, uint _fee);
+}
+
+function isActive(address _user) public returns (uint) {
+    return exprity[_user] > block.timestamp;
+}
+
+function getExpirty(address _user) public returns (uint) {
+    return exprity[_user];
+}
+
+function withdraw() public {
+    require (msg.sender == owner, "Not owner");
+}
