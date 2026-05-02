@@ -1,0 +1,40 @@
+pragma solidity ^0.8.23;
+
+contract RoleSysyem {
+    address public owner;
+    address public manger;
+    uint public member;
+    mapping (address => bool) public privridge;
+    mapping (address => uint) public member;
+    event memberCount (address owner, uint member);
+}
+
+constructor() public {
+    owner = msg.sender;
+    isAdmin[owner] = true;
+}
+
+function addAdmin(adress _user) public {
+    require (msg.sender == owner, "Not owner");
+    manger = _user;
+    emit memberCount (address msg.sender, uint _user);
+}
+
+function addMember(adress _user) public {
+    require(isAdmin[msg.sender], "Not admin");
+    member = _user;
+    MemberCount += 1;
+    emit memberCount (address msg.sender, uint _user);
+}
+
+function getMemberCount() public returns (uint) {
+    return MemberCount;
+}
+
+function checkAdmin(address _user) public returns (bool) {
+    return manger[_user];
+}
+
+function checkMember(address _user) public returns (bool) {
+    return member[_user];
+}
