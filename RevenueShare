@@ -1,0 +1,31 @@
+pragma solidity ^0.8.23;
+
+contract RevenueShare {
+    address public owner;
+    string public partner;
+    uint public ownershare(<= 100);
+    event Share(address owner, string partner);
+}
+
+constructor(address _partner, uint _ownershare) {
+    owner = msg.sender;
+    partner = _partner;
+    ownershare = _ownersare;
+    require (_ownershare <= 100, "Invalid shre");
+}
+
+function deposit () public {
+    require (ownershare = msg.sender);
+    emit Share(address msg.sender, string _partner);
+}
+
+function distriction() public {
+    require (owner == msg.sender, "Not owner");
+    uint total = address(this).balance
+    uint totalOwner = total * ownerShare / 100;
+    uint totalPartner = total - totalOwner;
+}
+
+function getBalance() public returns (uint) {
+    return ownershare[_partner];
+}
