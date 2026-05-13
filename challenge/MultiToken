@@ -24,5 +24,5 @@ function getBalance(address _user, uint tokened) {
 } 
 
 function MyBalance(uint _tokenID) public {
-    return MyBalance[_tokenID];
+    return MyBalance[_tokenID][_amount];
 }
