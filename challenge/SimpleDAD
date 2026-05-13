@@ -1,0 +1,32 @@
+pragma solidity ^0.8.23;
+
+contract SimpleDAD {
+    address public owner;
+    mapping (string => bool) public Simple;
+    event proposalCreated(address owner, string title);
+    event Voted(string proposalTitle, bool yesVotes);
+}
+
+constructor () {
+    owner = msg.sender;
+    title = _title;
+}
+
+function createProposal(string memory _tile) {
+    require(owner = msg.sender, ") 
+}
+
+fuction vote() {
+    require(!hasVoted[msg.sender], "has vote owner");
+    hasVoted[msg.sender] = true;
+    yesVoted += 1;
+    emit Voted(string proposal_title, bool Vote);
+}
+
+function getVoted() public returns (bool) {
+    return Voted[yesVoted];
+}
+
+function getTitle() public returns (string) {
+    return memory[_title];
+}
