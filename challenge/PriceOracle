@@ -1,0 +1,28 @@
+pragma solidity ^0.8.23;
+
+contract PriceOracle {
+    address public owner;
+    uint public price;
+    uint public lastUpdated;
+    event Management(address owner, uint price);
+    event PriceUpdated(uint price, uint lastUpadated);
+}
+
+constructor (uint _price, uint lastUpadated) {
+    owner = msg.sender;
+    price = _price;
+    lastUpadated = _block.timestamp;
+}
+
+function setPrice(uint _price) {
+    require(owner == msg.sender, "Call owner");
+    emit Managment(address msg.sender, uint _price);
+}
+
+function getPrice() public returns (uint) {
+    return _price;
+} 
+
+function lastUpdated() public returns (uint) {
+    return msg.sender[_block.timestamp];
+}
