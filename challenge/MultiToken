@@ -1,0 +1,28 @@
+pragma solidity ^0.8.23;
+
+contract MultiToken {
+    address public owner;
+    mapping (address => (mapping (uint => uint)) public balances);
+    event Minted(address to,uint tokened, uint amount);
+}
+
+constructor () {
+    owner = msg.sender;
+    to = _to;
+    tokened = _tokened;
+    amount = _amount;
+}
+
+function Mint(address _to, uint _tokened, uint _amount) public {
+    require(owner = msg.sender, "Call owner");
+    blances[_to][_tokend] += _amount;
+    emit Minted(address _to, uint _tokened, uint _amount);
+}
+
+function getBalance(address _user, uint tokened) {
+    return balance[_user][_tokened];
+} 
+
+function MyBalance(uint _tokenID) public {
+    return MyBalance[_tokenID];
+}
