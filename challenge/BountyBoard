@@ -1,0 +1,28 @@
+pragma solidity ^0.8.23;
+
+contract BountyBoard {
+    address public owner;
+    mapping (uint => bool) public judge;
+    event Bountry(address owner, uint bounty);
+    event Judge(uint bounty, bool isClaimed);
+}
+
+constructor () {
+    owner = msg.sender;
+    bounty = _bounty;
+    isClamimed = 
+}
+
+function found() public {
+    require(owner == msg.sender, "Sent owner");
+    emit Bountry(address msg.sender, uint _bounty);
+}
+
+function claim() public {
+    require(isClaimed)
+    emit Judge(uint _bounty, bool _isClamied);
+}
+
+function getStatus() public returns (bool) {
+    return isClamied[_bouty];
+}
