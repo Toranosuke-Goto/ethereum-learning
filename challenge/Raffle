@@ -1,0 +1,37 @@
+pragma solidity ^0.08.23;
+
+contract Raffle {
+    address public owner;
+    uint public ticketPrice;
+    mapping (address => uint) public ticketCount;
+    event totalTicket(address buyer, uint count);
+}
+
+constructor (uint _price) {
+    owner = msg.sender;
+    ticketPrice = _ticketPrice;
+    count = _count;
+}
+
+function buyTicket() {
+    require(msg.sender >= ticketPrice, "buy ticket");
+    ticketCount += 1;
+    
+    emit totoalTicket(address msg.sender, uint _ticketPrice);
+}
+
+function getMyTicket() public returns (uint) {
+    return MyTicket[_count];
+}
+
+function getTotalTickets() public returns (uint) {
+    return TotalTickets(msg.sender);
+} 
+
+function getBlance() public {
+    return Blance(_count);
+}
+
+function withdraw() {
+    require(owner == msg.sender, "Call owner");
+}
