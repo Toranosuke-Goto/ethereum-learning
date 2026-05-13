@@ -1,0 +1,42 @@
+pragma solidity ^0.8.23;
+
+contract FeeValue {
+    address public owner;
+    uint public feeRate;
+    mapping (address => uint) public deposit;
+    event Deposit(address user, uint amount, uint fee);
+}
+
+constructor (uint _feeRate) {
+    require(feeRate <= 100, "set feeRate");
+    owner = msg.sender;
+    user = _user
+    amount = msg.value
+    feeRate = _feeRate;
+    fee = _fee;
+}
+
+function deposit() {
+    _fee = msg.value * feeRate / 100;
+    net = msg.value - fee;
+    deposit[msg.sender] += net;
+    totalFee += fee;
+    emit Deposit(address _user, uint _amount, uint _fee);
+}
+
+function getMyDeposit() public returns (uint) {
+    return MyDeposit(msg.value);
+}
+
+function getTotoalFee() public returns (uint) {
+    return TotalFee(_fee);
+}
+
+function getBlance() {
+    return Blance(_user);
+}
+
+function withdraw() {
+    require(owner=msg.sender, "call owner");
+    return user[msg.sender];
+}
