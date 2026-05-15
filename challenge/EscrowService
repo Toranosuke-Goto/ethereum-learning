@@ -1,0 +1,42 @@
+pragma solidity ^0.8.23;
+
+constructor EscrowService {
+    address public owner;
+    mapping (address => uint) public Buyer;
+    mapping (address => uint) public seller;
+    bool public confrimbuyer;
+    bool public comfrimseller;
+    event Deposit(adress buyer, uint amount);
+    event Release(address seller, uint amount);
+    event confrim(bool comfrimbuyer, bool confrimseller);
+}
+
+constructor(address _buyer, address _seller, uint _amount) {
+    owner = msg.sender;
+    buyer = _buyer;
+    seller = _seller;
+    amount = _amount;
+    confrimbuyer = _comfrimbuyer;
+    confrimseller = _comfrimseller;
+}
+
+function deposit() {
+    require(msg.sender == buyer, "Can buy it");
+    emit Deposit(address _buyer, uint _amount);
+}
+
+function confrim() {
+    require(buyer || seller, "confrim user");
+    emit confrim(bool _confrimbuyer, bool _confrimseller);
+}
+
+fuction release() {
+    require(msg.sender == seller, "Can sell it");
+    require(confrimbuyrer && confrimseller, ");
+    confrim = true;
+    emit Release(address _seller, uint _amount);
+}
+
+function getBalance() returns (bool) {
+    return Balance(msg.sender);
+}
