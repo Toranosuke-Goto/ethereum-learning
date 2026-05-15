@@ -27,13 +27,14 @@ function deposit() {
 
 function confrim() {
     require(buyer || seller, "confrim user");
+    conftimed = true;
     emit confrim(bool _confrimbuyer, bool _confrimseller);
 }
 
 fuction release() {
     require(msg.sender == seller, "Can sell it");
     require(confrimbuyrer && confrimseller, ");
-    confrim = true;
+    _amount = _seller;
     emit Release(address _seller, uint _amount);
 }
 
