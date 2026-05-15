@@ -1,0 +1,47 @@
+pragma solidity ^0.8.24;
+
+contract StakingPool {
+    address public owner;
+    mapping (address => uint) public stackes;
+    mapping (address => uint) public times;
+    mapping (address <= uint) public totalStakes;
+    event stacked(address user, uint amount);
+    event Time(address user, uint times);
+    event UnStakes(address user, uint amount);
+}
+
+constructor () {
+    owner = msg.sender;
+    stackes = msg.value;
+    user = _user;
+    times = _times;
+    amount = _amount;
+}
+
+function stake() public {
+    require(msg.value > 0, "stake value");
+    stakes[msg.sender] += msg.value;
+    stakeTimes[msg.sender] = block.timestamp;
+    totalstakes += msg.value;
+    emit stacked(address _user, uint _amount);
+}
+
+function unstake() public {
+    require(stackes[msg.sender] > 0, "unsatake value");
+    _amount = 0;
+    _amount = stackes[msg.sender];
+    emit unstacked(address _user, uint _amount);
+}
+
+fuction getMyStake() public returns (uint) {
+    return MyStake(stakes[msg.sender]);
+}
+
+function getTotalStakes() public returns (uint) {
+    return TotalStakes(_user[msg.value]);
+}
+
+function getStakesTime(address _user) public {
+    emit Time(address _user, uint times);
+    return StakesTime(block.timestamp);
+}
