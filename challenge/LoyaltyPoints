@@ -1,0 +1,37 @@
+pragma solidity ^0.8.23;
+
+contract LoyaltyPoints {
+    mapping (address => uint) public points;
+    event PointsEarned(address owner, uint points);
+    event PointsAmount(address owner, uint amount)
+
+}
+
+constructor (uint _pointsPetPurchase) {
+    owner = msg.sender;
+    points = _points
+    amount = _amount;
+}
+
+function purchase() {
+    require(msg.sender > 0);
+    points[msg.sender] += _amount;
+    emit PointsEarned(address msg.sender, uint _points);
+}
+
+function redeen(uint _amount) {
+    require(points[msg.sender] <= _amount);
+    emit PointAmount(address msg.sender, uint _amount);
+}
+
+function getPoints() public returns (uint) {
+    return Points[_amount];
+}
+
+function getMyPoints public returns (uint) {
+    return MyPoints[points[msg.sender]];
+}
+function withdraw() public {
+    require(owner = msg.sender, "Call owner");
+    return withdraw(msg.sender);
+}
