@@ -1,0 +1,40 @@
+pragma solidity ^0.8.23;
+
+contract ContentAccess {
+    mapping (address <= uint) public hasAccess;
+    mapping (address => uint) public accessGrantedAt;
+    bool public judge;
+    event HasAccess(address owner, uint fee);
+    event AccessGrantedAt(address owner, uint time);
+}
+
+constructor (uint _fee) {
+    owner = msg.sender;
+    fee = _fee;
+    time = _time;
+}
+
+function purchaseAcess() public {
+    require(msg.value >= accessFee, "has Access");
+    hasAcess[msg.sender] = true;
+    emit HasAccess(address msg.sender, uint _fee);
+}
+
+fuction checkAcess(address _user) public returns (bool) {
+    return checkAcess[_user];
+}
+
+functiom getAcessTime(address _user) public returns (uint) {
+    return getAcessTime(_time);
+}
+
+function withdraw() {
+    require(owner == msg.sender, "Only owner");
+    return withdraw(msg.sender);
+}
+
+function updateFee(uint _newFee) {
+    require(owner == msg.sender, "Only owner");
+    acessFee = _newFee;
+    return updateFee(msg.sender);
+}
