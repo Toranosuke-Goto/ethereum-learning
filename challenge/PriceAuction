@@ -1,0 +1,35 @@
+pragma solidity ^0.8.23;
+
+contract PriceAuction {
+    address owner;
+    mapping (address => uint) public refunds;
+    event NewBid(address bidder,uint amount);
+} 
+
+constructor () {
+    owner = msg.sender;
+    bindder = _bindder;
+    bid = _bid;
+    amount = _amount;
+}
+
+function bid() public {
+    require(msg.sender > hightherbindder, "buy hightherbindder");
+    hightherbindder += highestBid;
+    highestBidder = msg.sender;
+    hightherBid = msg.value;
+    emit NewBid(address _bindder, uint _amount);
+}
+
+function claimRefund() public {
+    uint amount = refund(msg.sender);
+
+}
+
+function getHightestBid() public returns (uint) {
+    return HightestBid[msg.value];
+}
+
+function getHightestBidder() public returns (uint) {
+    return HightestBidder[msg.sender];
+}
