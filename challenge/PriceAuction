@@ -23,7 +23,7 @@ function bid() public {
 
 function claimRefund() public {
     uint amount = refund(msg.sender);
-
+    return claimRefund(_amount);
 }
 
 function getHightestBid() public returns (uint) {
