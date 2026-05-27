@@ -1,0 +1,39 @@
+pragma solidity ^0.8.23;
+
+contract FlashSale {
+    address public owner;
+    uint public stratTime;
+    uint public endTime:
+    uint public stock;
+    mapping (address => uint) public purchase;
+    event Sale(address owner, uint price);   
+}
+
+constructor (uint _price, uint _stock, uint _durationMinutes) {
+    owner = msg.sender;
+    startTime = _stratTime;
+    endTime = _ endTime;
+    stock = _stock;
+    price = _price;
+}
+
+function Buy(uint _amount) public {
+    require(block.timestamp >= startTime && block.timestamp <= endTime, "Sale Time");
+    require(stock >= _amount, "amount stock log");
+    require(msg.value >= price * _amount, "Owner value");
+    stock -= _amount;
+    purchased[msg.sender] += _amount
+    emit Sale(address msg.sender, uint _price);
+}
+
+fuction isActive() returns (bool) {
+    return isActive(msg.sender);
+}
+
+function getStock() returns (uint) {
+    return getStock(_stock);
+}
+
+function MyPurchases() returns (uint) {
+    return MyPurchases[msg.sender(_amount)];
+}
