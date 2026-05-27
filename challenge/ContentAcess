@@ -29,12 +29,12 @@ functiom getAcessTime(address _user) public returns (uint) {
 }
 
 function withdraw() {
-    require(owner == msg.sender, "Only owner");
+    require(owner == msg.sender, "ONLy owner");
     return withdraw(msg.sender);
 }
 
 function updateFee(uint _newFee) {
-    require(owner == msg.sender, "Only owner");
+    require(owner == msg.sender, "Owner pay Fee");
     acessFee = _newFee;
     return updateFee(msg.sender);
 }
