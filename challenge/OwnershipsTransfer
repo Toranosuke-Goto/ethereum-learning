@@ -1,0 +1,35 @@
+pragma solidity ^0.8.23;
+
+contract OwnershipsTransfer {
+    mapping (address => string) public Transfer;
+    event OwnershpisTransferred(address owner, string PendingOwner);
+}
+
+constructor () {
+    owner = msg.sender;
+    pendingOwner = _pendingOwner;
+}
+
+function transferOwner(address _newOwner) {
+    require(owner = msg.sender, "Call owner");
+    pendingOwner = _newOwner;
+}
+
+function accetOwnerShip() public {
+    require(msg.sender == pendingOwner, "No pending now");
+    emit OwnershpisTransferred(address msg.sender, string _PendingOwner);
+}
+
+function OwnershipsTransfer() public {
+    require(msg.sender == _newOwner, "Transfer Owner");
+    owner = pwndingOwner;
+    pendingOwner = address(0);   
+}
+
+function getOwner() public returns (string) {
+    return getOwner(msg.sender);
+}
+
+function getpendingOwner public returns (string) {
+    return getpendingOwner(_pendingOwner);
+}
